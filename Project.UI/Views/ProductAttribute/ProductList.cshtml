@@ -1,0 +1,34 @@
+﻿@model ProductVM
+@{
+    ViewBag.Title = "ProductList";
+}
+
+
+
+<div class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Ürün</th>
+                   
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (Product item in Model.Products)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.ActionLink(item.ProductName, "AddAttribute", new {id = item.ID} )
+
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+﻿@model ProductVM
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(x => x.ProductInstance.ProductName, new { placeholder = "Lütfen ürün ismi giriniz", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductInstance.ProductName)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.ProductInstance.UnitPrice, new { placeholder = "Lütfen ürün fiyatı giriniz", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductInstance.UnitPrice)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.ProductInstance.Amount, new { placeholder = "Lütfen ürün stok giriniz", @class = "form-control" })
+    </div>
+    
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

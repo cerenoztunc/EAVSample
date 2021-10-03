@@ -1,0 +1,24 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+@using (Html.BeginForm())
+{
+<div>
+    @Html.TextBoxFor(x => x.CategoryInstance.CategoryName, new { placeholder = "Lütfen kategori ismi giriniz", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryInstance.CategoryName)
+</div>
+<div>
+    @Html.TextBoxFor(x => x.CategoryInstance.Description, new { placeholder = "Lütfen kategori ismi giriniz", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryInstance.Description)
+</div>
+    
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

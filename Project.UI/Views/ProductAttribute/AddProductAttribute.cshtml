@@ -1,0 +1,21 @@
+﻿@model ProductAttributeVM
+@{
+    ViewBag.Title = "AddProductAttribute";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.DropDownListFor(x => x.ProductAttributeInstance.ProductID, new SelectList(Model.Products, "ID", "ProductName"))
+    </div>
+    <div>
+        @Html.DropDownListFor(x => x.ProductAttributeInstance.AttributeID, new SelectList(Model.AttributeEnts, "ID", "AttributeName"))
+    </div>
+
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}

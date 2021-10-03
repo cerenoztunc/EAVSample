@@ -1,0 +1,19 @@
+﻿@model AttributeVM
+@{
+    ViewBag.Title = "UpdateAttribute";
+}
+
+@using (Html.BeginForm())
+{    @Html.HiddenFor(x=>x.AttributeInstance.ID)
+<div>
+    @Html.TextBoxFor(x => x.AttributeInstance.AttributeName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AttributeInstance.AttributeName)
+</div>
+
+
+    <div>
+        <button class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+}

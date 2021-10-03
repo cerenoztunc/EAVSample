@@ -1,0 +1,38 @@
+﻿@model ProductAttributeVM
+@{
+    ViewBag.Title = "ProductAttributeList";
+}
+
+
+
+<div class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Ürün</th>
+                    <th>Özellik</th>
+
+                    <th colspan="2" style="padding-left:100px">Islemler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <tr>
+                    <td>@Model.ProductInstance.ProductName</td>
+
+                    @foreach (ProductAttribute item in Model.ProductAttributes)
+                    {
+                        <td>@item.Attribute.AttributeName</td>
+                    }
+
+
+
+
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

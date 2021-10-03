@@ -1,0 +1,41 @@
+﻿@model ShipmentVM
+@{
+    ViewBag.Title = "ShipmentList";
+}
+
+<div class="jumbotron">
+    Yeni bir ürün eklemek icin  @Html.ActionLink("tıklayınız", "AddShipment")
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Şirket Ismi</th>
+
+                    <th colspan="2" style="padding-left:100px">Islemler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (Shipment item in Model.Shipments)
+                {
+                    <tr>
+                        <td>@item.CompanyName</td>
+
+                        <td>
+                            @Html.ActionLink("Güncelle", "UpdateShipment", new { id = item.ID }, new { @class = "btn btn-warning" })
+
+                        </td>
+
+                        <td>    @Html.ActionLink("Sil", "DeleteShipment", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

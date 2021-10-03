@@ -1,0 +1,25 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "UpdateProduct";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.CategoryInstance.ID)
+    <div>
+        @Html.TextBoxFor(x => x.CategoryInstance.CategoryName, new { placeholder = "Lütfen kategori ismi giriniz", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryInstance.CategoryName)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.CategoryInstance.Description, new { placeholder = "Lütfen kategori ismi giriniz", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryInstance.Description)
+    </div>
+
+
+    <div>
+        <button class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+}
+

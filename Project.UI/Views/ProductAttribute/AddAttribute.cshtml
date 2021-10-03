@@ -1,0 +1,29 @@
+﻿@model AttributeVM
+@{
+    ViewBag.Title = "AddAttribute";
+}
+
+@using (Html.BeginForm())
+{
+<div>
+    @foreach (AttributeEnt item in Model.Attributes)
+    {
+        <td>
+
+          @Html.CheckBoxFor(x=>x.AttributeInstance.IsSelect, new {@checked = false})
+            <label>@item.AttributeName</label>
+          
+        </td>
+       
+    }
+
+</div>
+    
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

@@ -1,0 +1,30 @@
+﻿@model AppUserVM
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel panel-body">
+            @using (Html.BeginForm())
+            {
+            <div>
+                @Html.TextBoxFor(x => x.AppUser.UserName, new { placeholder = "Kullanıcı ismini giriniz", @class = "form-control" }) <br />
+                @Html.ValidationMessageFor(x => x.AppUser.UserName)
+
+            </div>
+
+            <div>
+                @Html.PasswordFor(x => x.AppUser.Password, new { placeholder = "Sifre giriniz", @class = "form-control" }) <br />
+                @Html.ValidationMessageFor(x => x.AppUser.Password)
+            </div>
+                <div>
+                    <button class="btn btn-primary">
+                        Login
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

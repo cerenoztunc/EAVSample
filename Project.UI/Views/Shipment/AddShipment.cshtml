@@ -1,0 +1,20 @@
+﻿@model ShipmentVM
+@{
+    ViewBag.Title = "AddShipment";
+}
+
+@using (Html.BeginForm())
+{
+<div>
+    @Html.TextBoxFor(x => x.ShipmentInstance.CompanyName, new { placeholder = "Şirket adı giriniz", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipmentInstance.CompanyName)
+</div>
+    
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

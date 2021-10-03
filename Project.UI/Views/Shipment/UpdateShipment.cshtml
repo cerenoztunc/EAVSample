@@ -1,0 +1,20 @@
+﻿@model ShipmentVM
+@{
+    ViewBag.Title = "UpdateShipment";
+}
+
+@using (Html.BeginForm())
+{   @Html.HiddenFor(x=>x.ShipmentInstance.ID)
+    <div>
+        @Html.TextBoxFor(x => x.ShipmentInstance.CompanyName, new { placeholder = "Şirket adı giriniz", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ShipmentInstance.CompanyName)
+    </div>
+
+
+    <div>
+        <button class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+}
+
